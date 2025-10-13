@@ -1,6 +1,6 @@
 const inputNome = document.getElementById('inputNome');
-// Certifique-se de que seu HTML tem <input id="inputSenha">
-const inputSenha = document.getElementById('inputSenha'); 
+// Certifique-se de que seu HTML tem <input id="inputPassword">
+const inputPassword = document.getElementById('inputPassword'); 
 const botao = document.getElementById('btnCapturar');
 
 // 2. Adicionar o "ouvinte" de evento ao botão
@@ -8,7 +8,7 @@ botao.addEventListener('click', function() {
     
     // 3. Acessar a propriedade .value de cada input
     const nome = inputNome.value;
-    const senha = inputSenha.value; // Senha não precisa de conversão para número (parseInt)
+    const senha = inputPassword.value; // Senha não precisa de conversão para número (parseInt)
 
     // --- Verificação ---
     // Verifica se os campos não estão vazios após remover espaços em branco (.trim())
