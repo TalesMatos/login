@@ -4,29 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Captura de Inputs</title>
+    <style>
+        .senha-erro {
+            color: red;
+            font-size: 12px;
+        }
+        .centralizado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Opcional: centralizar o título */
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>verificação inicial</h1>
-
-    <form id="mf">
-        
-        <label for="inputNome">Nome:</label>
-        <input type="text" id="inputNome" placeholder="Digite seu nome">
-        <br><br>
-     <div>
-          <label for="inputPassword">Senha:</label>
-          <input type="password" id="inputPassword" placeholder="">
-          <span id="SenhaErro" class="senha-erro"></span>
+    <div class="centralizado">
+        <h1>verificação inicial</h1>
+        <form id="mf">
+            <label for="inputNome">Nome:</label>
+            <input type="text" id="inputNome" placeholder="Digite seu nome">
             <br><br>
-         
-     </div>
-        <button type="button" id="btnCapturar">Pronto</button>
-        
-        <br><br>
-    </form>
-
+            <div>
+                <label for="inputPassword">Senha:</label>
+                <input type="password" id="inputPassword" placeholder="">
+                <br><br>
+                <span id="SenhaErro" class="senha-erro"></span>
+                <br><br>
+            </div>
+            <button type="button" id="btnCapturar">Pronto</button>
+            <br><br>
+        </form>
+    </div>
     <script src="index.js"></script> 
-    
 </body>
 </html>
