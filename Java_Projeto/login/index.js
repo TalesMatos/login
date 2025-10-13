@@ -12,7 +12,7 @@ botao.addEventListener('click', function() {
 
     if (nome.trim() === '' || senha.trim() === '') {
         if (senha.trim() === '') {
-            SenhaErro.textContent = 'A senha não pode estar vazia.';
+            SenhaErro.textContent = 'A senha não pode estar vazia, Tente novamente.';
         }
         alert('Por favor, preencha seu nome e senha.');
         return; 
