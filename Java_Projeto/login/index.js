@@ -19,7 +19,7 @@ function cadastrarUsuario(nome, senha) {
 botao.addEventListener('click', function() {
     const nome = inputNome.value;
     const senha = inputPassword.value; 
-
+    
     SenhaErro.textContent = '';
 
     if (nome.trim() === '' || senha.trim() === '') {
@@ -36,6 +36,13 @@ botao.addEventListener('click', function() {
         return;
     }
 
+    // Login do admin
+    if (nome === "tales" && senha === "12345") {
+        alert('Login bem-sucedido!');
+        window.location.href = "../EscolhaSeuSite/index.html"; // Caminho relativo ao arquivo de destino
+        return;
+    }
+
     cadastrarUsuario(nome, senha);
 
     console.log('--- Dados Capturados ---');
@@ -44,6 +51,10 @@ botao.addEventListener('click', function() {
 
     alert(`Bem-vindo, ${nome}! Sua tentativa de login foi capturada e armazenada.`);
 });
+if (nome === "admin" && senha === "admin123") {
+    alert('Login bem-sucedido!');
+    window.location.href = '';
+}
 
 
 inputPassword.addEventListener('input', function() {
