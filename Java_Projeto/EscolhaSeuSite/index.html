@@ -9,29 +9,83 @@
         font-family: Arial, sans-serif;
         text-align: center;
         margin-top: 60px;
+        background-color: #9c9999;
+        height: 70vh;
     }
-    ul {
-        list-style-type: none;
-        padding: 0;
+    h1 {
+        color: #361010;
+        margin-bottom: 40px;
     }
-    li {
-        margin: 25px 0;
+
+    /* Novo: estilo do container do botão e imagem */
+    .btn-container {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
     }
-    a {
-        text-decoration: none;
-        color: #6d06e4;
-        font-size: 25px;
+
+    .btn-container button {
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        background: #ff8c42;
+        color: white;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    a:hover {
-        text-decoration: underline;
+
+    /* Crescer o botão ao passar o mouse */
+    .btn-container:hover button {
+        transform: scale(1.12);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    </style>
+
+    /* Imagem inicialmente oculta e posicionada ao lado do botão */
+    .btn-container img {
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 12px);
+        transform: translateY(-50%) scale(0.95);
+        width: 220px;
+        max-width: 40vw;
+        border-radius: 8px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease, transform 0.18s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        background: #fff;
+    }
+
+    /* Mostrar a imagem ao passar o mouse no container */
+    .btn-container:hover img {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+
+    /* Ajustes para telas pequenas */
+    @media (max-width: 600px) {
+        .btn-container img {
+            left: 50%;
+            top: calc(100% + 12px);
+            transform: translateX(-50%) translateY(0) scale(0.95);
+            width: 70vw;
+        }
+        .btn-container:hover img {
+            transform: translateX(-50%) translateY(0) scale(1);
+        }
+    }
+</style>
 </head>
 <body>
     <h1>Escolha um site</h1>
-    <ul>
-        <li><a href="">Restaurante</a></li>
-        <li><a href="">loja</a></li>
-    </ul>
+
+    <!-- Container que controla hover tanto do botão quanto da imagem -->
+    <div class="btn-container">
+        <button type="button">Restaurante</button>
+        <!-- Ajuste o src para o caminho da sua imagem local, ex.: ../assets/restaurante.jpg -->
+        <img src="../assets/restaurante.jpg" alt="Imagem do Restaurante">
+    </div>
+
+    <br><br>
 </body>
 </html>
